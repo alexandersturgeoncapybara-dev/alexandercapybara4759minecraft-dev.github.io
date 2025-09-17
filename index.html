@@ -75,3 +75,84 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MiniCraft</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #87ceeb, #228B22);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0.2em;
+      text-shadow: 2px 2px 5px #000;
+    }
+    #toolbar {
+      margin: 1em;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px #000;
+      transition: transform 0.1s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #world {
+      background: #87ceeb;
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      min-height: 200px;
+      width: 90%;
+    }
+    .block {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      margin: 2px;
+    }
+    .grass { background-color: #3cb043; }
+    .dirt { background-color: #8b4513; }
+    .stone { background-color: #808080; }
+    .water { background-color: #1e90ff; }
+  </style>
+</head>
+<body>
+  <h1>🌍 Welcome to MiniCraft! ⛏️</h1>
+  <p>Pick a block and click to place it:</p>
+
+  <div id="toolbar">
+    <button style="background:#3cb043;color:white;" onclick="placeBlock('grass')">Grass</button>
+    <button style="background:#8b4513;color:white;" onclick="placeBlock('dirt')">Dirt</button>
+    <button style="background:#808080;color:white;" onclick="placeBlock('stone')">Stone</button>
+    <button style="background:#1e90ff;color:white;" onclick="placeBlock('water')">Water</button>
+  </div>
+
+  <div id="world"></div>
+
+  <script>
+    function placeBlock(type) {
+      const block = document.createElement("div");
+      block.classList.add("block", type);
+      document.getElementById("world").appendChild(block);
+    }
+  </script>
+</body>
+</html>

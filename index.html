@@ -17,3 +17,61 @@
   <script type="module" src="./src/main.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MiniCraft</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #87ceeb, #228B22);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0.2em;
+      text-shadow: 2px 2px 5px #000;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff9800;
+      color: white;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px #000;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #e68900;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌍 Welcome to MiniCraft! ⛏️</h1>
+  <p>Click the button to place a block:</p>
+  <button onclick="placeBlock()">Place Block</button>
+  <div id="world"></div>
+
+  <script>
+    function placeBlock() {
+      const block = document.createElement("div");
+      block.style.width = "50px";
+      block.style.height = "50px";
+      block.style.backgroundColor = "brown";
+      block.style.display = "inline-block";
+      block.style.margin = "2px";
+      document.getElementById("world").appendChild(block);
+    }
+  </script>
+</body>
+</html>
